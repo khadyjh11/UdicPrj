@@ -1,0 +1,41 @@
+img {
+  width: 190px;
+  height: 200px;
+  margin: 5px;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #618d9d;
+  border-radius: 8px;
+}
+
+.cartpage {
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.cartitem {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 50px;
+}
+.panel {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.detail {
+  justify-content: left;
+  margin-bottom: 8px;
+}
+.text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5em;
+}
+.removeCart {
+  color: red;
+}

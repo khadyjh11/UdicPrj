@@ -1,0 +1,20 @@
+
+
+    <div class="prodectList">
+            <a routerLink="/proDetail/{{ items.id }}">
+                <img class="image" src="{{items.url}}">
+              </a>
+              <b class="font"> {{items.name}} </b>
+              <b>$ {{items.price}}</b>
+              <form  (ngSubmit)="addTocart(items)">
+                <select class="select"  [(ngModel)]="select" (ngModelChange)="selectQun($event)" [ngModelOptions]="{ standalone: true }" >
+                  <option *ngFor="let option of produ_count" value="{{ option }}"   >
+                   {{ option }}
+                 </option>
+                </select>
+                <br/>
+                <button type="submit" class="btn btn-primary" >add to cart</button>
+      
+              </form>
+          </div>
+        

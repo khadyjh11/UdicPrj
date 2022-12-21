@@ -1,0 +1,19 @@
+.image {
+  height: 30rem;
+  margin-left: 50%;
+  margin-top: 2rem;
+  width: 20rem;
+  height: 30rem;
+  padding: 20px;
+  border: 1px solid #618d9d;
+  border-radius: 8px;
+}
+.prodectInf {
+  padding: 4rem;
+  margin-left: 25%;
+  margin-top: 2rem;
+}
+select {
+  width: 6rem;
+  padding: 6px;
+}

@@ -1,0 +1,13 @@
+nav {
+  background: linear-gradient(to right, rgb(83, 126, 142), rgb(80, 149, 174));
+  color: #fff;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.nav-link {
+  font-family: 'Times New Roman', Times, serif;
+}

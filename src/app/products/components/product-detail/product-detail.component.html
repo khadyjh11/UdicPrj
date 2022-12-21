@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" *ngIf="product">
+    <div class="col">
+      <img class="image" src="{{ product.url}}" >
+    </div>
+    <div class="col">
+      <div class="prodectInf" >
+        
+        <div >
+         <h2>{{product.name}}</h2>
+         <p>{{product.description}}</p>
+         <p>${{product.price}}</p>
+         <form  (ngSubmit)="addTocart(product)">
+          <select class="select"  [(ngModel)]="select" (ngModelChange)="selectQun($event)" [ngModelOptions]="{ standalone: true }" >
+            <option *ngFor="let option of Quality" value="{{ option }}"   >
+             {{ option }}
+           </option>
+          </select>
+          <br/>
+          <button type="submit" class="btn btn-primary" >add to cart</button>
+
+        </form>
+    
+
+         <div>
+           <a class="back-button" routerLink="/pro">&lt; Back to product list</a>
+       </div>
+     </div>
+     </div>
+    </div>
+  </div>
