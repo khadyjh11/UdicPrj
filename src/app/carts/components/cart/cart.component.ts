@@ -49,8 +49,8 @@ export class CartComponent implements OnInit {
     window.location.reload()
   }
 
-  onSubmit(value: any) {
+  onSubmit(fullname: string) {
     this.Products.clearCart()
-    this.route.navigate([`success/${value.fullname}/${this.totalPrice}`])
+    this.route.navigate([`success/${fullname}/${this.totalPrice}`])
   }
 }

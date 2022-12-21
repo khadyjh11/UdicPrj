@@ -6,12 +6,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 })
 export class UsersComponent implements OnInit {
   @Output() Success: EventEmitter<string> = new EventEmitter()
-  fullname: string = ''
-  address: string = ''
-  credNmber: number | string = ''
 
   constructor() {}
   ngOnInit(): void {}
+  fullname: string = ''
+  address: string = ''
+  credNmber: number | string = ''
 
   // submit  fullname fun
   onSubmit(): void {
