@@ -1,15 +1,14 @@
-<div class="container">
-    <div class="items">
-        <div class="SUCCESS">
-            SUCCESS 🎉
-        </div>
-        <div >Thank you, <b>{{ fullname }}</b></div>
-        <div >Your <b>${{ totalPrice }}</b> order is confirmed!</div>
-        <div>Please allow 1-3 business day(s) for shipping</div>
-        <div >
-                <a routerLink="/pro">
-                    Return to product list
-                </a>
-            </div>
+
+<div class="grid text-center">
+    <br/> <br/> <br/>
+    <div class="g-col-6 g-col-md-4" class="SUCCESS"> SUCCESS 🎉</div>
+    <div class="g-col-6 g-col-md-4">Thank you, <b>{{ fullname }}</b></div>
+    <div class="g-col-6 g-col-md-4">Your <b>${{ total}}</b> order is confirmed!</div>
+    <div class="g-col-6 g-col-md-4">Please allow 1-3 business day(s) for shipping</div>
+    <div >
+        <a routerLink="/" style="color: gray">
+            Return to product list
+        </a>
     </div>
-</div>
+
+  </div>

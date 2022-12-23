@@ -28,16 +28,18 @@ export class ProductDetailComponent implements OnInit {
       console.log(this.product)
     })
   }
+
   selectQun(quantity: any) {
     this.select = quantity
   }
   // get proudect Id
   getProductId(id: number | null): Product {
-    return this.products.filter((product) => product.id === id)[0]
+    return this.products.filter((a) => a.id === id)[0]
   }
+
   addTocart(product: Product) {
     const cart: Product[] = this.productService.getCartProduct()
-    let newProduct = cart.find((product) => product.id === product.id)
+    let newProduct = cart.find((itm) => itm.id === itm.id)
     if (newProduct) {
       newProduct.amount = this.select
       newProduct ? this.productService.addProduct(cart) : null

@@ -7,7 +7,7 @@
               <b class="font"> {{items.name}} </b>
               <b>$ {{items.price}}</b>
               <form  (ngSubmit)="addTocart(items)">
-                <select class="select"  [(ngModel)]="select" (ngModelChange)="selectQun($event)" [ngModelOptions]="{ standalone: true }" >
+                <select class="select"  [(ngModel)]="select" (ngModelChange)="selectQun($event)"  >
                   <option *ngFor="let option of produ_count" value="{{ option }}"   >
                    {{ option }}
                  </option>
