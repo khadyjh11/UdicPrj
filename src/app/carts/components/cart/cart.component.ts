@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
 
     this.calculate()
   }
+  // select quen of prodect
   selectProduct(value: string, product: Product) {
     const index = this.cart.indexOf(product)
     this.cart[index] = product
@@ -29,6 +30,7 @@ export class CartComponent implements OnInit {
     this.calculate()
   }
 
+  // calculate the total price and amount
   calculate() {
     this.totalPrice = this.cart.reduce((acc, item) => {
       this.totalPrice = parseFloat((acc + item.price * Number(item.amount)).toFixed(2))
@@ -38,7 +40,10 @@ export class CartComponent implements OnInit {
   // delete item from cart by id
   removeCart(id: number) {
     const storg = this.Products.getCartProduct()
-    const item = storg.filter((product: Product) => product.id !== id)
+    //
+    const item = storg.filter((itme: Product) => itme.id !== id)
+
+    // update cart wen item remove from cart
     window.localStorage.clear()
     localStorage.setItem('cart', JSON.stringify(item))
     this.refresh()
@@ -49,8 +54,9 @@ export class CartComponent implements OnInit {
     window.location.reload()
   }
 
+  // checkout submit
   onSubmit(fullname: string) {
     this.Products.clearCart()
-    this.route.navigate([`success/${fullname}/${this.totalPrice}`])
+    this.route.navigate([`${fullname}/${this.totalPrice}`])
   }
 }

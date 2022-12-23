@@ -1,4 +1,4 @@
-.product-index {
+.index {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -6,7 +6,7 @@
   margin-bottom: 64px;
 }
 
-.product-container {
+.product {
   display: flex;
   justify-content: center;
 }
