@@ -6,7 +6,7 @@ import { ProductListComponent } from '../app/products/components/product-list/pr
 import { CartCheckoutComponent } from '../app/carts/components/cart-checkout/cart-checkout.component'
 const routes: Routes = [
   { path: '', component: ProductListComponent },
-  { path: 'proDetail/:id', component: ProductDetailComponent },
+  { path: 'item/:id', component: ProductDetailComponent },
   { path: 'item', component: CartComponent },
   { path: ':fullname/:total', component: CartCheckoutComponent }
 ]
