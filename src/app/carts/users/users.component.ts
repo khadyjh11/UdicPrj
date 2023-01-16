@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -12,7 +13,10 @@ export class UsersComponent implements OnInit {
   fullname: string = ''
   address: string = ''
   credNmber: number | string = ''
-
+  validateUserName(userName: string) {
+    const UserList = ['ankit', 'admin', 'user', 'superuser']
+    return UserList.indexOf(userName) > -1
+  }
   // submit  fullname fun
   onSubmit(): void {
     this.Success.emit(this.fullname)

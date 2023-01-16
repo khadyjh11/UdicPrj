@@ -11,7 +11,7 @@
          <p>{{product.description}}</p>
          <p>${{product.price}}</p>
          <form  (ngSubmit)="addTocart(product)">
-          <select class="select"  [(ngModel)]="select" (ngModelChange)="selectQun($event)"  >
+          <select class="select"  [(ngModel)]="select" (ngModelChange)="selectQun($event)" [ngModelOptions]="{ standalone: true }" >
             <option *ngFor="let option of Quality" value="{{ option }}"   >
              {{ option }}
            </option>

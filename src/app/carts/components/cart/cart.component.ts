@@ -38,6 +38,7 @@ export class CartComponent implements OnInit {
   // delete item from cart by id
   removeCart(id: number) {
     this.cart = this.cart.filter((item) => item.id !== id)
+    window.alert('items deleted')
 
     this.calculate()
   }

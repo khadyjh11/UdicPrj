@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
     if (newProduct) {
       newProduct.amount = this.select
       newProduct ? this.productService.addProduct(cart) : null
-      window.alert('add to cart')
+      window.alert("it's in the cart")
     } else {
       cart.push(Object.assign(product, { amount: this.select }))
       this.productService.addProduct(cart)
