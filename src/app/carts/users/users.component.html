@@ -1,21 +1,41 @@
 <div class="col"  >
-    <form #form="ngForm"  (ngSubmit)="onSubmit()"  >
-        <div class="form-group">
-          <label  class="text">Full Name</label>
-          <input name="fullname" [(ngModel)]="fullname" class="form-control"  placeholder="Enter full name">
-        </div>
-        <div class="form-group">
-          <label class="text" >Address</label>
-          <input name="address" [(ngModel)]="address" type="address" class="form-control"  placeholder="(minimum 6 characters)">
-        </div>
-        <div class="form-group">
-            <label name=" credNmber"[(ngModel)]="credNmber" class="text" >Cerdit card number</label>
-            <input  class="form-control"  placeholder="( 16-digit number)">
+  <form [formGroup]="UsersForm" (ngSubmit)="onSubmit()"  >
+      <div class="form-group">
+        <label  class="text">Full Name</label>
+        <input name="fullname" formControlName="fullname" class="form-control"  placeholder="Enter full name" required [ngClass]="{
+          'is-invalid': send && fullname?.touched && fullname?.errors
+        }">
+        <div *ngIf="fullname?.invalid && (fullname?.dirty || fullname?.touched)" class="alert alert-danger mt-2">
+          <div *ngIf="fullname?.errors?.['required']">
+            add fullname
           </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="text" >Address</label>
+        <input name="address" formControlName="address" type="address" class="form-control"  placeholder="(minimum 6 characters)" [ngClass]="{
+          'is-invalid': send && address?.touched && address?.errors
+        }">
+        <div *ngIf="address?.invalid && (address?.dirty || address?.touched)" class="alert alert-danger mt-2">
+          <div *ngIf="address?.errors?.['required']"> add address</div>
+      </div>
+      </div>
+      <div class="form-group">
+          <label name=" credNmber" class="text" >Cerdit card number</label>
+          <input  class="form-control" type="number" placeholder="( 16-digit number)" formControlName="creditCard" maxlength="16">
+          <div *ngIf="
+            credNmber?.invalid && (credNmber?.dirty || credNmber?.touched)
+        " class="alert alert-danger mt-2">
+                <div *ngIf="credNmber?.errors?.['required']">
+                     add number of CreditCard
+                </div>
+            </div>
+        </div>
 
-        <br/>
-        <div> 
-          <button  [disabled]="form.invalid" type="submit" class="btn btn-primary"  >Submit</button></div>
-    
-      </form>  
-  </div>
+      <br/>
+      <div> 
+        <button  type="submit" class="btn btn-primary"  >Submit</button></div>
+  
+    </form>  
+</div>
+
